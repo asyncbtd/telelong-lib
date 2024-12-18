@@ -11,6 +11,7 @@
 
     <modules>
         <module>telelong-meta</module>
+        <module>telelong-longpolling</module>
     </modules>
 
     <properties>
