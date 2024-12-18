@@ -9,6 +9,10 @@
     <packaging>pom</packaging>
     <version>1.0.0</version>
 
+    <modules>
+        <module>telelong-meta</module>
+    </modules>
+
     <properties>
         <java.version>21</java.version>
         <maven.compiler.release>${java.version}</maven.compiler.release>
