@@ -1,6 +1,8 @@
 package by.asyncbtd.tll.client;
 
 import by.asyncbtd.tll.meta.TelegramClient;
+import by.asyncbtd.tll.meta.methods.EditMessageText;
+import by.asyncbtd.tll.meta.methods.SendDice;
 import by.asyncbtd.tll.meta.methods.SendMessage;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -24,7 +26,11 @@ public class HttpTelegramClient implements TelegramClient {
                 .header("Content-Type", "application/json")
                 .build();
         try {
-            httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+            var response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+            response.body();
+
+            System.out.println("Status Code: " + response.statusCode());
+            System.out.println("Response Body: " + response.body());
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -41,6 +47,31 @@ public class HttpTelegramClient implements TelegramClient {
         }
         sendToApi(json, method);
     }
+
+    @Override
+    public void execute(SendDice sendDice) {
+        String method = "/sendDice";
+        String json;
+        try {
+            json = objectMapper.writeValueAsString(sendDice);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        sendToApi(json, method);
+    }
+
+    @Override
+    public void execute(EditMessageText editMessageText) {
+        String method = "/editMessageText";
+        String json;
+        try {
+            json = objectMapper.writeValueAsString(editMessageText);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        sendToApi(json, method);
+    }
+
 
     public HttpTelegramClient(String botToken) {
         this.botToken = botToken;
