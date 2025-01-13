@@ -29,8 +29,8 @@ public class HttpTelegramClient implements TelegramClient {
             var response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
             response.body();
 
-            System.out.println("Status Code: " + response.statusCode());
-            System.out.println("Response Body: " + response.body());
+            //System.out.println("Status Code: " + response.statusCode());
+            //System.out.println("Response Body: " + response.body());
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
