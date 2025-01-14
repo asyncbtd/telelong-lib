@@ -1,8 +1,15 @@
 package by.asyncbtd.tll.meta.objects.reaction;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ReactionCount {
 
+    @JsonProperty("type")
     private ReactionType type;
+
+    @JsonProperty("totalCount")
     private Integer totalCount;
 
     public ReactionType getType() {

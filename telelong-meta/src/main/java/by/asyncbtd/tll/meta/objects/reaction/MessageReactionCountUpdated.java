@@ -1,14 +1,24 @@
 package by.asyncbtd.tll.meta.objects.reaction;
 
 import by.asyncbtd.tll.meta.objects.chat.Chat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class MessageReactionCountUpdated {
 
+    @JsonProperty("chat")
     private Chat chat;
+
+    @JsonProperty("message_id")
     private Integer messageId;
+
+    @JsonProperty("data")
     private Integer date;
+
+    @JsonProperty("reactions")
     private List<ReactionCount> reactions;
 
     public Chat getChat() {

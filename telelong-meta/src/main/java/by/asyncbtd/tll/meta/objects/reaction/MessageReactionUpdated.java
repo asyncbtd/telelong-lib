@@ -1,18 +1,34 @@
 package by.asyncbtd.tll.meta.objects.reaction;
 
-import by.asyncbtd.tll.meta.objects.chat.Chat;
 import by.asyncbtd.tll.meta.objects.User;
+import by.asyncbtd.tll.meta.objects.chat.Chat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class MessageReactionUpdated {
 
+    @JsonProperty("chat")
     private Chat chat;
+
+    @JsonProperty("message_id")
     private Integer messageId;
+
+    @JsonProperty("user")
     private User user;
+
+    @JsonProperty("actor_chat")
     private Chat actorChat;
+
+    @JsonProperty("date")
     private Integer date;
+
+    @JsonProperty("old_reaction")
     private List<ReactionType> oldReaction;
+
+    @JsonProperty("new_reaction")
     private List<ReactionType> newReaction;
 
     public Chat getChat() {

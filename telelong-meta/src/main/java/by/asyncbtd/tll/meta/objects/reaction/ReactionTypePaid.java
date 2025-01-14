@@ -1,7 +1,10 @@
 package by.asyncbtd.tll.meta.objects.reaction;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class ReactionTypePaid implements ReactionType {
 
+    @JsonProperty("type")
     private String type;
 
     public String getType() {
