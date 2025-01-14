@@ -4,14 +4,14 @@ import by.asyncbtd.tll.meta.objects.business.BusinessConnection;
 import by.asyncbtd.tll.meta.objects.business.BusinessMessagesDeleted;
 import by.asyncbtd.tll.meta.objects.chat.ChatJoinRequest;
 import by.asyncbtd.tll.meta.objects.chat.boost.ChatBoostRemoved;
-import by.asyncbtd.tll.meta.objects.chat.member.ChatMemberUpdated;
 import by.asyncbtd.tll.meta.objects.chat.boost.ChatBoostUpdated;
+import by.asyncbtd.tll.meta.objects.chat.member.ChatMemberUpdated;
 import by.asyncbtd.tll.meta.objects.message.Message;
 import by.asyncbtd.tll.meta.objects.paid.PaidMediaPurchased;
 import by.asyncbtd.tll.meta.objects.poll.Poll;
 import by.asyncbtd.tll.meta.objects.poll.PollAnswer;
-import by.asyncbtd.tll.meta.objects.reaction.MessageReactionUpdated;
 import by.asyncbtd.tll.meta.objects.reaction.MessageReactionCountUpdated;
+import by.asyncbtd.tll.meta.objects.reaction.MessageReactionUpdated;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -89,6 +89,10 @@ public class Update {
 
     @JsonProperty("removed_chat_boost")
     private ChatBoostRemoved removedChatBoost;
+
+    public Boolean isMessage() {
+        return this.message != null;
+    }
 
     public Integer getUpdateId() {
         return updateId;
