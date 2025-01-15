@@ -49,7 +49,7 @@ public class Update {
     private MessageReactionUpdated messageReaction;
 
     @JsonProperty("message_reaction_count")
-    private MessageReactionCountUpdated messageReactionCountUpdated;
+    private MessageReactionCountUpdated messageReactionCount;
 
     @JsonProperty("inline_query")
     private InlineQuery inlineQuery;
@@ -94,6 +94,14 @@ public class Update {
         return this.message != null;
     }
 
+    public Boolean isMessageReaction() {
+        return this.messageReaction != null;
+    }
+
+    public Boolean isMessageReactionCount() {
+        return this.messageReactionCount != null;
+    }
+
     public Integer getUpdateId() {
         return updateId;
     }
@@ -134,8 +142,8 @@ public class Update {
         return messageReaction;
     }
 
-    public MessageReactionCountUpdated getMessageReactionCountUpdated() {
-        return messageReactionCountUpdated;
+    public MessageReactionCountUpdated getMessageReactionCount() {
+        return messageReactionCount;
     }
 
     public InlineQuery getInlineQuery() {
@@ -230,8 +238,8 @@ public class Update {
         this.messageReaction = messageReaction;
     }
 
-    public void setMessageReactionCountUpdated(MessageReactionCountUpdated messageReactionCountUpdated) {
-        this.messageReactionCountUpdated = messageReactionCountUpdated;
+    public void setMessageReactionCountUpdated(MessageReactionCountUpdated messageReactionCount) {
+        this.messageReactionCount = messageReactionCount;
     }
 
     public void setInlineQuery(InlineQuery inlineQuery) {
@@ -297,7 +305,7 @@ public class Update {
                 ", editedBusinessMessage=" + this.getEditedBusinessMessage() +
                 ", deletedBusinessMessages=" + this.getDeletedBusinessMessages() +
                 ", messageReaction=" + this.getMessageReaction() +
-                ", messageReactionCountUpdated=" + this.getMessageReactionCountUpdated() +
+                ", messageReactionCount=" + this.getMessageReactionCount() +
                 ", inlineQuery=" + this.getInlineQuery() +
                 ", chosenInlineResult=" + this.getChosenInlineResult() +
                 ", callbackQuery=" + this.getCallbackQuery() +
@@ -318,7 +326,7 @@ public class Update {
 
     public Update(Integer updateId, Message message, Message editedMessage, Message channelPost, Message editedChannelPost, BusinessConnection businessConnection,
                   Message businessMessage, Message editedBusinessMessage, BusinessMessagesDeleted deletedBusinessMessages, MessageReactionUpdated messageReaction,
-                  MessageReactionCountUpdated messageReactionCountUpdated, InlineQuery inlineQuery, ChosenInlineResult chosenInlineResult, CallbackQuery callbackQuery,
+                  MessageReactionCountUpdated messageReactionCount, InlineQuery inlineQuery, ChosenInlineResult chosenInlineResult, CallbackQuery callbackQuery,
                   ShippingQuery shippingQuery, PreCheckoutQuery preCheckoutQuery, PaidMediaPurchased purchasedPaidMedia, Poll poll, PollAnswer pollAnswer,
                   ChatMemberUpdated myChatMember, ChatMemberUpdated chatMember, ChatJoinRequest chatJoinRequest, ChatBoostUpdated chatBoost, ChatBoostRemoved removedChatBoost) {
         this.updateId = updateId;
@@ -331,7 +339,7 @@ public class Update {
         this.editedBusinessMessage = editedBusinessMessage;
         this.deletedBusinessMessages = deletedBusinessMessages;
         this.messageReaction = messageReaction;
-        this.messageReactionCountUpdated = messageReactionCountUpdated;
+        this.messageReactionCount = messageReactionCount;
         this.inlineQuery = inlineQuery;
         this.chosenInlineResult = chosenInlineResult;
         this.callbackQuery = callbackQuery;
