@@ -5,19 +5,43 @@ import by.asyncbtd.tll.meta.objects.LoginUrl;
 import by.asyncbtd.tll.meta.objects.SwitchInlineQueryChosenChat;
 import by.asyncbtd.tll.meta.objects.game.CallbackGame;
 import by.asyncbtd.tll.meta.objects.web.WebAppInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class InlineKeyboardButton {
 
+    @JsonProperty("text")
     private String text;
+
+    @JsonProperty("url")
     private String url;
+
+    @JsonProperty("callback_data")
     private String callbackData;
+
+    @JsonProperty("web_app")
     private WebAppInfo webApp;
+
+    @JsonProperty("login_url")
     private LoginUrl loginUrl;
+
+    @JsonProperty("switch_inline_query")
     private String switchInlineQuery;
+
+    @JsonProperty("switch_inline_query_current_chat")
     private String switchInlineQueryCurrentChat;
+
+    @JsonProperty("switch_inline_query_chosen_chat")
     private SwitchInlineQueryChosenChat switchInlineQueryChosenChat;
+
+    @JsonProperty("copy_text")
     private CopyTextButton copyText;
+
+    @JsonProperty("callback_game")
     private CallbackGame callbackGame;
+
+    @JsonProperty("pay")
     private Boolean pay;
 
     public String getText() {
