@@ -2,7 +2,7 @@ package by.asyncbtd.tll.meta.methods;
 
 import by.asyncbtd.tll.meta.objects.LinkPreviewOptions;
 import by.asyncbtd.tll.meta.objects.ReplyParameters;
-import by.asyncbtd.tll.meta.objects.keyboard.reply.ReplyMarkup;
+import by.asyncbtd.tll.meta.objects.keyboard.ReplyMarkup;
 import by.asyncbtd.tll.meta.objects.message.MessageEntity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
