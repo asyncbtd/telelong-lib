@@ -1,15 +1,31 @@
 package by.asyncbtd.tll.meta.objects.message;
 
 import by.asyncbtd.tll.meta.objects.User;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class MessageEntity {
 
+    @JsonProperty("type")
     private String type;
+
+    @JsonProperty("offset")
     private Integer offset;
+
+    @JsonProperty("length")
     private Integer length;
+
+    @JsonProperty("url")
     private String url;
+
+    @JsonProperty("user")
     private User user;
+
+    @JsonProperty("language")
     private String language;
+
+    @JsonProperty("custom_emoji_id")
     private String customEmojiId;
 
     public String getType() {
