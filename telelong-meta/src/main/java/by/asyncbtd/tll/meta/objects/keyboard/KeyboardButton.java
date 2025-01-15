@@ -1,15 +1,31 @@
 package by.asyncbtd.tll.meta.objects.keyboard;
 
 import by.asyncbtd.tll.meta.objects.web.WebAppInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class KeyboardButton {
 
+    @JsonProperty("text")
     private String text;
+
+    @JsonProperty("request_users")
     private KeyboardButtonRequestUsers requestUsers;
+
+    @JsonProperty("request_chat")
     private KeyboardButtonRequestChat requestChat;
+
+    @JsonProperty("request_contact")
     private Boolean requestContact;
+
+    @JsonProperty("request_location")
     private Boolean requestLocation;
+
+    @JsonProperty("request_poll")
     private KeyboardButtonPollType requestPoll;
+
+    @JsonProperty("web_app")
     private WebAppInfo webApp;
 
     public String getText() {
