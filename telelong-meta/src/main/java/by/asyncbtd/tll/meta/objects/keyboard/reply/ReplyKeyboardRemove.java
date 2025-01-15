@@ -1,8 +1,15 @@
 package by.asyncbtd.tll.meta.objects.keyboard.reply;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ReplyKeyboardRemove {
 
+    @JsonProperty("remove_keyboard")
     private Boolean removeKeyboard;
+
+    @JsonProperty("selective")
     private Boolean selective;
 
     public Boolean getRemoveKeyboard() {
