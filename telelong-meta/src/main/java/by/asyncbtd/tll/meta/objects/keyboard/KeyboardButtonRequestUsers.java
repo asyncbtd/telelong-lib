@@ -1,13 +1,30 @@
 package by.asyncbtd.tll.meta.objects.keyboard;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class KeyboardButtonRequestUsers {
 
+    @JsonProperty("request_id")
     private Integer requestId;
+
+    @JsonProperty("user_is_bot")
     private Boolean userIsBot;
+
+    @JsonProperty("user_is_premium")
     private Boolean userIsPremium;
-    private Integer max_quantity;
+
+    @JsonProperty("max_quantity")
+    private Integer maxQuantity;
+
+    @JsonProperty("request_name")
     private Boolean requestName;
+
+    @JsonProperty("request_username")
     private Boolean requestUsername;
+
+    @JsonProperty("request_photo")
     private Boolean requestPhoto;
 
     public Integer getRequestId() {
@@ -22,8 +39,8 @@ public class KeyboardButtonRequestUsers {
         return userIsPremium;
     }
 
-    public Integer getMax_quantity() {
-        return max_quantity;
+    public Integer getMaxQuantity() {
+        return maxQuantity;
     }
 
     public Boolean getRequestName() {
@@ -50,8 +67,8 @@ public class KeyboardButtonRequestUsers {
         this.userIsPremium = userIsPremium;
     }
 
-    public void setMax_quantity(Integer max_quantity) {
-        this.max_quantity = max_quantity;
+    public void setMaxQuantity(Integer maxQuantity) {
+        this.maxQuantity = maxQuantity;
     }
 
     public void setRequestName(Boolean requestName) {
@@ -70,7 +87,7 @@ public class KeyboardButtonRequestUsers {
         return "KeyboardButtonRequestUsers(requestId=" + this.getRequestId() +
                 ", userIsBot=" + this.getUserIsBot() +
                 ", userIsPremium=" + this.getUserIsPremium() +
-                ", max_quantity=" + this.getMax_quantity() +
+                ", max_quantity=" + this.getMaxQuantity() +
                 ", requestName=" + this.getRequestName() +
                 ", requestUsername=" + this.getRequestUsername() +
                 ", requestPhoto=" + this.getRequestPhoto() + ")";
@@ -79,12 +96,12 @@ public class KeyboardButtonRequestUsers {
     public KeyboardButtonRequestUsers() {
     }
 
-    public KeyboardButtonRequestUsers(Integer requestId, Boolean userIsBot, Boolean userIsPremium, Integer max_quantity, Boolean requestName, Boolean requestUsername,
-                                      Boolean requestPhoto) {
+    public KeyboardButtonRequestUsers(Integer requestId, Boolean userIsBot, Boolean userIsPremium, Integer maxQuantity,
+                                      Boolean requestName, Boolean requestUsername, Boolean requestPhoto) {
         this.requestId = requestId;
         this.userIsBot = userIsBot;
         this.userIsPremium = userIsPremium;
-        this.max_quantity = max_quantity;
+        this.maxQuantity = maxQuantity;
         this.requestName = requestName;
         this.requestUsername = requestUsername;
         this.requestPhoto = requestPhoto;
