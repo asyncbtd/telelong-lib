@@ -1,11 +1,24 @@
 package by.asyncbtd.tll.meta.objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class SwitchInlineQueryChosenChat {
 
+    @JsonProperty("query")
     private String query;
+
+    @JsonProperty("allow_user_chats")
     private Boolean allowUserChats;
+
+    @JsonProperty("allow_bot_chats")
     private Boolean allowBotChat;
+
+    @JsonProperty("allow_group_chats")
     private Boolean allowGroupChats;
+
+    @JsonProperty("allow_channel_chats")
     private Boolean allowChannelChats;
 
     public String getQuery() {
