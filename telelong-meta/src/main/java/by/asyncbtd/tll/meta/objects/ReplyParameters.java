@@ -1,17 +1,33 @@
 package by.asyncbtd.tll.meta.objects;
 
 import by.asyncbtd.tll.meta.objects.message.MessageEntity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ReplyParameters {
 
+    @JsonProperty("message_id")
     private Integer messageId;
+
+    @JsonProperty("chat_id")
     private Long chatId;
+
+    @JsonProperty("allow_sending_without_reply")
     private Boolean allowSendingWithoutReply;
+
+    @JsonProperty("quote")
     private String quote;
+
+    @JsonProperty("quote_parse_mode")
     private String quoteParseMode;
+
+    @JsonProperty("quote_entities")
     private List<MessageEntity> quoteEntities;
+
+    @JsonProperty("quote_position")
     private Integer quotePosition;
 
     public Integer getMessageId() {
